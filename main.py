@@ -7,6 +7,15 @@ from aiogram import Bot, Dispatcher
 from configs.botConfig import TOKEN, form_router
 # from handlers.RegisterationHandlers import *
 # from handlers.ServiceBookingHandlers import *
+from aiogram.filters import  CommandStart
+from aiogram.fsm.context import FSMContext
+from aiogram.types import (
+    KeyboardButton,
+    Message,
+    ReplyKeyboardMarkup,
+    Contact
+)
+from aiogram.types.web_app_info import WebAppInfo
 
 @form_router.message(CommandStart())
 async def command_start( message: Message, state: FSMContext) -> None:

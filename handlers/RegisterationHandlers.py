@@ -15,17 +15,17 @@ from configs.botConfig import form_router
 @form_router.message(CommandStart())
 async def command_start( message: Message, state: FSMContext) -> None:
 
-    # await message.answer(f"Thanks, please share your phone number (use the 'Share my phone number' feature).",
-    # reply_markup=ReplyKeyboardMarkup(
-    #                         keyboard=[
-    #                             [KeyboardButton(text="Google", web_app=WebAppInfo(url="http://www.google.com"))],
-    #                         ],
-    #                         resize_keyboard=True
-    #                     )
-    #                   )
-    await message.answer("Welcome to the KeteroBot! I will guide you through the registration process. Please provide your full name.")
+    await message.answer(f"Thanks, please share your phone number (use the 'Share my phone number' feature).",
+    reply_markup=ReplyKeyboardMarkup(
+                            keyboard=[
+                                [KeyboardButton(text="Google", web_app=WebAppInfo(url="https://ketero-web.vercel.app/client"))],
+                            ],
+                            resize_keyboard=True
+                        )
+                      )
+    # await message.answer("Welcome to the KeteroBot! I will guide you through the registration process. Please provide your full name.")
     
-    await state.set_state(UserRegistration.full_name)
+    # await state.set_state(UserRegistration.full_name)
 
 # @form_router.message(CommandStart())
 # async def command_start( message: Message, state: FSMContext) -> None:

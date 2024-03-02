@@ -4,7 +4,7 @@ import sys
 from aiogram.enums import ParseMode
 
 from aiogram import Bot, Dispatcher
-from configs.botConfig import TOKEN, form_router
+# from configs.botConfig import TOKEN, form_router
 # from handlers.RegisterationHandlers import *
 # from handlers.ServiceBookingHandlers import *
 from aiogram.filters import  CommandStart
@@ -16,6 +16,14 @@ from aiogram.types import (
     Contact
 )
 from aiogram.types.web_app_info import WebAppInfo
+
+from aiogram import  Router
+
+
+TOKEN = "6672011144:AAHCySVm-SsHYbQ4mpHC54p1hXIwtBmYw1Y"
+
+form_router = Router()
+
 
 @form_router.message(CommandStart())
 async def command_start( message: Message, state: FSMContext) -> None:
